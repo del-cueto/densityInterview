@@ -5,7 +5,6 @@ class Grade < ApplicationRecord
   end
 
   def notify_student
-    enrollment = grade.enrollment
     StudentMailer.with(student: enrollment.student, grade: self, course: enrollment.course).notify_student_grade.deliver_later
   end
 

@@ -6,7 +6,6 @@ class CreateGrades < ActiveRecord::Migration[7.1]
       t.integer :second_quarter
       t.integer :third_quarter
       t.integer :fourth_quarter
-
       t.timestamps
     end
   end

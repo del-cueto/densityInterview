@@ -43,7 +43,6 @@ gem "bootsnap", require: false
 
 #authorization and authentication 
 gem 'devise'
-gem 'cancancan'
 
 #email procs
 # gem 'mailcatcher', group: :development

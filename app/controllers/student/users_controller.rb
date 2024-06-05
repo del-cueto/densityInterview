@@ -1,7 +1,6 @@
 class Student::UsersController < Student::BaseController
     def index 
-        user = user.find(params[:id])
-        render json: user
+        render json: current_user
     end
     
     private 
