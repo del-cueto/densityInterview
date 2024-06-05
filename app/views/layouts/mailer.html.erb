@@ -3,11 +3,10 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <style>
-      /* Email styles need to be inline */
     </style>
   </head>
 
   <body>
-    <%= yield %>
+   <%= @user.name %> your current grade for <%=@course.name%> has been updated your overall score for this course is now which is <%=  @grade.overall_score %> a <%=@grade.passing_grade %> grade
   </body>
 </html>

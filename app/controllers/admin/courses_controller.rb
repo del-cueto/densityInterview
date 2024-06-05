@@ -4,6 +4,11 @@ class Admin::CoursesController < Admin::BaseController
     render json: courses
  end
 
+ def show 
+    course = Course.find(params[:id])
+    render json: course
+ end
+ 
  def create
     course = Course.new(course_params)
     if course.save 
@@ -29,11 +34,6 @@ class Admin::CoursesController < Admin::BaseController
     else
         render json: course.errors, status: :unprocessable_entity
     end
- end
- 
- def show 
-    course = Course.find(params[:id])
-    render json: course
  end
 
  private 

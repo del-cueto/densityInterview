@@ -2,8 +2,13 @@ class Admin::UsersController < Admin::BaseController
     before_action :validate_role, only:[:create]
 
     def index 
-        users = Users.all
+        users = User.all
         render json: users
+    end
+
+    def show 
+        user = User.find(params[:id])
+        render json: user
     end
 
     def create 

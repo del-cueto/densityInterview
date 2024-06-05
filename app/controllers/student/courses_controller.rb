@@ -1,12 +1,13 @@
 class Student::CoursesController < Student::BaseController
     def index
-        student_courses
+        render json: student_courses, status: :ok
+
     end
 
 
     private 
 
     def student_courses
-        current_user.enrollments.map(&:course)
+        current_student.enrollments.map(&:course)
     end
 end

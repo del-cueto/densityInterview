@@ -1,11 +1,20 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :courses, only: [:index, :new, :create, :show]
+    resources :courses, exclude: [:new, :edit]
+    resources :users, exclude: [:new, :edit]
+    resources :enrollments, only: [:index, :create, :destroy] do 
+      resources :grades, only: [:index, :create, :update, :destroy]
+    end
   end
 
   namespace :student do
-
+    resources :courses, only: [:index]
+    resources :users, only: [:index]
+    resources :enrollments, only: [:index] do 
+      resources :grades, only: [:index]
+    end
   end
+
   devise_for :users
   resources :student do
     resources :enrollments, only: [:index, :new, :create, :destroy] do 
